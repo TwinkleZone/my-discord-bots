@@ -3,11 +3,13 @@ from discord.ext import commands
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import asyncio
+import os  # This module allows the bot to securely read your keys from the server background
 
-# --- TWINKLE MUSIC CONFIGURATION ---
-SPOTIFY_ID = "fd7935bcefb449d4af624151e9412a69"
-SPOTIFY_SECRET = "5a29d25806b740c0b0f2d68051aaf645"
-DISCORD_TOKEN = "MTUwODg3NjM4NTIxMTM4Mzg4OQ.GFISIi.ROY8wmC7uRuzMPmfKH44LAKbzvNGuKzZ-kBefM"
+# --- TWINKLE MUSIC CONFIGURATION (SECURED) ---
+# The bot grabs these from your server's private Environment Variables
+SPOTIFY_ID = os.environ.get("SPOTIFY_ID")
+SPOTIFY_SECRET = os.environ.get("SPOTIFY_SECRET")
+DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
 
 # --- SYSTEM SETUP ---
 intents = discord.Intents.default()
